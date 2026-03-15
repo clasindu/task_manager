@@ -1,4 +1,22 @@
 package com.lasindu.tasks.domain.dto;
 
-public record TaskDto() {
+import com.lasindu.tasks.domain.entities.TaskPriority;
+import com.lasindu.tasks.domain.entities.TaskStatus;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+public record TaskDto(
+    UUID id,
+    String title,
+    String description,
+    LocalDateTime dueDate,
+    TaskPriority priority,
+    TaskStatus status
+
+    )
+{
+
 }
+
+
