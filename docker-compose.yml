@@ -1,16 +1,20 @@
 services:
-  #our postgreSQL database
+  # our postgreSQL database
   db:
-    #The docker image of postgress--we're using the latest.
-     image: postgres:latest
-     #The parts to explore to the host container
-     #5432 is the default postgresSQL part
-     ports:
-       - "5432:5432"
-      #If we accidentally kill the running container, Docker Compose
-      #will restart it.
-     restart: always
-     #The PostgreSQL Docker containers uses environmnet variables to read configuration,here we set the password
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Sscl28@#$
 
-     environment:
-       POSTGRES_PASSWORD: Sscl28@#$
+  # The UI service
+  ui:
+    image: ghcr.io/devtiro/devtiro-build-task-app:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - BACKEND_HOST=host.docker.internal
+      - BACKEND_PORT=8082
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
