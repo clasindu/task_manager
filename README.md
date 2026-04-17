@@ -57,7 +57,7 @@ Before you begin, ensure you have the following installed:
 4. *Note: You do not need to create the tables manually. Spring Boot (Hibernate) will automatically generate the `tasks` table when the backend starts.*
 
 ### 2. Backend Setup (Spring Boot)
-1. Open a terminal and navigate to the backend folder (`cd backend`).
+1. Open a terminal and navigate to the backend folder.
 2. Run the application:
    * **Windows:** `mvnw spring-boot:run`
    * **Mac/Linux:** `./mvnw spring-boot:run`
